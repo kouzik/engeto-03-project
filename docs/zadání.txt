@@ -1,0 +1,13 @@
+Tvým úkolem bude spojit všechny současné znalosti dohromady. Zároveň ti chceme ponechat prostor pro kreativitu. Tvým úkolem bude vytvořit webovou stránku, která bude splňovat následující požadavky:
+
+- jednostránkový web
+- web je možné přepínat do dark-modu a zpět do light-modu
+- web obsahuje header, 2 sekce a footer
+- v headeru je responzivní menu minimálně se 3 položkami
+- obsah první sekce je na tobě, ale její součástí budou 3 obrázky vedle sebe, které se po najetí myši budou plynule zvětšovat a po odjetí myši zmenšovat
+- v druhé section bude umístěný formulář
+- ve formuláři se bude 2x zadávat heslo a formulář bude kontrolovat shodu hesel
+- po odscrollování směrem dolů se v pravém dolním rohu objeví ikonka zpět nahoru
+- je na tobě, jestli chceš javascriptový kód zapsat procedurálně nebo objektově
+- web by měl být responzivní
+- snaž se, aby web graficky dobře vypadal (i když hodnocení vzhledu je vždy individuální)

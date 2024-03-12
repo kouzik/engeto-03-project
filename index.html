@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - photographer</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="menu-list">
+            <ul class="menu">
+                <li><a href="#about-me">About me</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+            </ul>
+        </nav>
+        <div class="menu-icons-container">
+            <div class="menu-icon">
+                <i class="fa-bars fa-solid fa-xl" style="color: #ffffff"></i></a>
+            </div>
+            <div class="toggle-container">
+                <div class="mode-toggle">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </div>  
+            </div>
+        </div>
+    </header>
+    <section class="about-me-section" id="about-me">
+        <div class="about-me content">
+            <div class="about-me-foto">
+                <img src="./assets/img/john-doe.jpg" alt>
+            </div>
+            <div class="about-me-content">
+                <p>Welcome to the world through my lens! I'm John Doe, a passionate photographer capturing moments 
+                that last a lifetime. With a keen eye for detail and a love for storytelling, I specialize in 
+                various photography genres, including portraits, landscapes, and macro photography. My journey 
+                behind the camera has been a thrilling exploration of emotions, light, and the beauty that surrounds us. 
+                Join me as I freeze moments in time, sharing stories and emotions through the art of photography.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="gallery-intro content">
+            <p>Step into the visual poetry of my portfolio. Each image is a unique narrative, a glimpse into the emotions, 
+            colors, and stories I've encountered on my photographic journey. Explore the diverse world of my lens, 
+            from the intimate connection in portraits to the vast landscapes that evoke a sense of wonder. Each photograph 
+            is a piece of my heart, and I invite you to immerse yourself in the visual stories I've had the privilege to capture.</p>
+        </div>
+        <div class="gallery-content content">
+            <div class="img-wrapper"><img src="./assets/img/photo-1.JPG" alt loading="lazy"></div>
+            <div class="img-wrapper"><img src="./assets/img/photo-2.JPG" alt loading="lazy"></div>
+            <div class="img-wrapper"><img src="./assets/img/photo-3.JPG" alt loading="lazy"></div>
+            <div class="img-wrapper"><img src="./assets/img/photo-4.JPG" alt loading="lazy"></div>
+        </div>
+
+    </section>
+
+    <section class="contact-me" id="contact">
+        <h2>Get in touch</h2>
+        <div class="contact-me-intro content">
+            <p>Have a project in mind or simply want to connect? I'm here to listen. Whether you're looking to schedule a photoshoot, 
+            discuss a collaboration, or just share your thoughts on my work, feel free to reach out. Your inquiries are important 
+            to me, and I'm excited to explore the endless possibilities that photography brings. Let's create something beautiful 
+            together. Fill out the form below, and let the journey begin!</p>
+        </div>
+        
+        <form action="">
+            <input type="text" placeholder="Name" class="fullName"/><br>
+            <input type="email" placeholder="e-mail" class="email"/><br>
+            <input type="password" placeholder="Secret phrase for photo access" class="phrase" minlength="6"/><br>
+            <input type="password" placeholder="Phrase again" class="phraseCheck" minlength="6"/><br>
+            <input type="submit" value="Send"/>
+        </form>
+        <p class="formNotification">&nbsp;</p>
+    </section>
+
+    <div class="returnIcon"><i class="fas fa-arrow-up"></i></div>
+
+    <footer>
+        <p>&copy; 2024 John Doe Photography. All Rights Reserved. | +420 123 456 789 | john@doe.cz</p>
+    </footer>
+
+    <script src="./assets/script.js"></script>
+    <script src="https://kit.fontawesome.com/0a7adfab2b.js" crossorigin="anonymous"></script>
+</body>
+</html>
