@@ -2,6 +2,7 @@ const menuIcon = document.querySelector('.menu-icon i');
 const menuIconContainer = document.querySelector('.menu-icon');
 const menuList = document.querySelector('.menu-list');
 const menu = document.querySelector('.menu');
+const body = document.querySelector('body');
 const menuItems = menu.querySelectorAll('li');
 const form = document.querySelector('form');
 const formName = document.querySelector('.fullName');
@@ -54,17 +55,13 @@ function displayNotification(message, color) {
 
 function toggleColorMode() {
     if (colorMode == "dark") {
-        document.documentElement.style.setProperty('--secondary-bg', '#6E6E6E');
-        document.documentElement.style.setProperty('--gallery-bg', '#ffffff'); 
-        document.documentElement.style.setProperty('--gallery-txt', '#000000'); 
+        body.classList.remove('dark');
         iconSun.style.display = 'block';
         iconMoon.style.display = 'none';
         colorMode = "light";
     }
     else if (colorMode == "light") {
-        document.documentElement.style.setProperty('--secondary-bg', '#4A4A4A');
-        document.documentElement.style.setProperty('--gallery-bg', '#000000'); 
-        document.documentElement.style.setProperty('--gallery-txt', '#ffffff'); 
+        body.classList.add('dark');
         iconSun.style.display = 'none';
         iconMoon.style.display = 'block';
         colorMode = "dark"

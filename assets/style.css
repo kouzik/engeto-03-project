@@ -1,11 +1,8 @@
 :root {
-    --main-bg: #333 ;
-    --main-txt: #fff ;
-    --secondary-bg: #6E6E6E ;
-    --gallery-txt: #000000 ;
-    --gallery-bg: #ffffff ;
-    --footer-bg: #333 ;
     --gallery-gap: 16px;
+    --main-bg: #333 ;
+    --footer-bg: #333 ;
+    --main-txt: #fff ;
   }
   
   * {
@@ -17,6 +14,18 @@
   body {
     font-family: Roboto;
   }
+  body { /* light mode colors */
+    --secondary-bg: #6E6E6E ;
+    --gallery-txt: #000000 ;
+    --gallery-bg: #ffffff ;
+
+  }
+  body.dark { /* dark mode colors */
+    --secondary-bg: #4A4A4A ;
+    --gallery-txt: #ffffff ;
+    --gallery-bg: #000000 ;
+  }
+
   p {
     text-align: justify;
   }
