@@ -14,26 +14,19 @@ const returnUpIcon = document.querySelector('.returnIcon');
 const toggleMode = document.querySelector('.toggle-container');
 const iconSun = document.querySelector('.fa-sun');
 const iconMoon = document.querySelector('.fa-moon');
-console.log(iconSun)
+let colorMode = "light";
 
+/* FUNCTIONS */
 
-
-
-console.log(menuItems)
-
-function toggleMenuIcon(icon) {
-    if (icon.classList.contains("fa-bars")) { 
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
-    } else if (icon.classList.contains("fa-xmark")) {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
+function toggleMenu() {
+    if (menuIcon.classList.contains("fa-bars")) { 
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+    } else if (menuIcon.classList.contains("fa-xmark")) {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
     } 
-}
-
-function displayNotification(message, color) {
-    formNotification.style.color = color;
-    formNotification.textContent = message; 
+    menuList.style.display = (menuList.style.display === 'none' || menuList.style.display === '') ? 'block' : 'none';
 }
 
 function formCheck() {
@@ -54,22 +47,48 @@ function formCheck() {
     } 
 }
 
+function displayNotification(message, color) {
+    formNotification.style.color = color;
+    formNotification.textContent = message; 
+}
+
+function toggleColorMode() {
+    if (colorMode == "dark") {
+        document.documentElement.style.setProperty('--secondary-bg', '#6E6E6E');
+        document.documentElement.style.setProperty('--gallery-bg', '#ffffff'); 
+        document.documentElement.style.setProperty('--gallery-txt', '#000000'); 
+        iconSun.style.display = 'block';
+        iconMoon.style.display = 'none';
+        colorMode = "light";
+    }
+    else if (colorMode == "light") {
+        document.documentElement.style.setProperty('--secondary-bg', '#4A4A4A');
+        document.documentElement.style.setProperty('--gallery-bg', '#000000'); 
+        document.documentElement.style.setProperty('--gallery-txt', '#ffffff'); 
+        iconSun.style.display = 'none';
+        iconMoon.style.display = 'block';
+        colorMode = "dark"
+    }
+}
+
+
+/* EVENTS */
+
 menuIcon.addEventListener('click', () => {
-    toggleMenuIcon(menuIcon)
-    menuList.style.display = (menuList.style.display === 'none' || menuList.style.display === '') ? 'block' : 'none';
+    toggleMenu();
 });
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault()
-    formCheck()
+    e.preventDefault();
+    formCheck();
 })
 
 galleryImages.forEach(element => {
     element.addEventListener("mouseenter", () => {
-        element.style.transform = "scale(1.03)"
+        element.style.transform = "scale(1.03)";
     })
     element.addEventListener("mouseleave", () => {
-        element.style.transform = "scale(1)"
+        element.style.transform = "scale(1)";
     })    
 });
 
@@ -87,38 +106,13 @@ returnUpIcon.addEventListener("click", () => {
 
 menuItems.forEach(element => {
     element.addEventListener("click", () => {
-        if (menuList.style.display === 'block') {
-            menuList.style.display = 'none'
-            toggleMenuIcon(menuIcon)
-        }
+        toggleMenu()
     })
 });
 
-function setColorMode(mode) {
-    if (mode == "light") {
-        document.documentElement.style.setProperty('--secondary-bg', '#6E6E6E');
-        document.documentElement.style.setProperty('--gallery-bg', '#ffffff'); 
-        document.documentElement.style.setProperty('--gallery-txt', '#000000'); 
-    }
-    else if (mode == "dark") {
-        document.documentElement.style.setProperty('--secondary-bg', '#4A4A4A');
-        document.documentElement.style.setProperty('--gallery-bg', '#000'); 
-        document.documentElement.style.setProperty('--gallery-txt', '#ffffff'); 
-    }
-}
 
 toggleMode.addEventListener("click", () => {
-    let iconSunDisplay = window.getComputedStyle(iconSun).getPropertyValue('display')
-    if (iconSunDisplay === 'block') {
-        iconSun.style.display = 'none';
-        iconMoon.style.display = 'block';
-        setColorMode("dark");
-    }
-    else {
-        iconSun.style.display = 'block';
-        iconMoon.style.display = 'none';
-        setColorMode("light");
-    }
+    toggleColorMode();
 })
 
 
